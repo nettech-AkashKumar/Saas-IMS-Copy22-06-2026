@@ -1,0 +1,5 @@
+.nav-search-input input::placeholder{
+   font-family: "Inter";
+   font-size: 14px;
+   color: #14193D66;
+}

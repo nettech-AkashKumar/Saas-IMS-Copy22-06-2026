@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* Section Title */
+.section-title {
+  font-size: 16px;
+  color: #0e101a;
+  font-family: "Inter" sans-serif;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+/* Table Wrapper Border */
+.table-bordered-custom {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.po-table thead th {
+  background: #e5f0ff;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.po-table tbody tr {
+  background: #fafafa;
+}
+
+.po-table tbody tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+.po-table td {
+  padding: 6px 10px;
+  vertical-align: middle;
+}
+
+/* Supplier Input */
+.supplierinput::placeholder {
+  color: #727681;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Discount Box */
+.discount-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.discount-box .symbol {
+  padding: 4px 6px;
+  background: #e5e7eb;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.discount-box .small {
+  width: 60px;
+  text-align: start;
+}
+
+/* Page container */
+.po-container {
+  padding: 30px;
+  background: #f7f9fc;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.section-title {
+  font-size: "16px";
+  color: "#0E101A";
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: "120%";
+}
+
+.supplierselect {
+  color: "#727681";
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  padding: 8px 14px;
+}
+.supplierlabel {
+  color: "Black";
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: "12px";
+}
+.supplierinput {
+  padding: "8px 12px";
+  border: "1px solid #EAEAEA";
+  border-radius: "8px";
+}
+.duedateinput {
+  padding-left: 40px;
+  padding-right: 30px;
+  border: "1px solid #EAEAEA";
+  border-radius: "8px";
+  cursor: pointer;
+}
+.duedateinput::placeholder {
+  color: #0e101a;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.supplierinput::placeholder {
+  color: #727681;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.vl {
+  width: 1px;
+  height: 80%;
+  background: #d7d7d7;
+}
+
+/* Upload Image Box */
+.upload-box {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #bfc5d2 !important;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7d8899;
+  font-size: 20px;
+}
+
+/* Summary card */
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  color: #3b3e45;
+}
+
+.summary-line span:last-child {
+  font-weight: 500;
+}
+
+.additionalcharges {
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  background: white;
+}
+
+/* Table Wrapper Card */
+.section-card {
+  background: white;
+  /* border: 1px solid #E5E7EB; */
+  border-radius: 8px;
+}
+
+/* Table */
+.po-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px; 
+}
+
+.po-table thead th {
+  background: #e5f0ff !important;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4b5563;
+  border: none !important;
+}
+
+.po-table tbody tr {
+  background: #fafafa;
+}
+
+.po-table tbody tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+.po-table td {
+  padding: 6px 10px !important;
+  vertical-align: middle;
+  border: none !important;
+}
+
+/* Inputs & Selects */
+
+/* Discount Group */
+.discount-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.discount-symbol {
+  background: #e5e7eb;
+  border: 1px solid #d0d5dd;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Add vertical line after each column */
+/* .po-table thead th,
+.po-table tbody td {
+  border-right: 1px solid #d7d7d7 !important;
+} */
+
+/* Remove last column border */
+.po-table thead th:last-child,
+.po-table tbody td:last-child {
+  border-right: none !important;
+}
+.po-table tbody tr {
+  background: #ffffff !important;
+}
+.discount-box input {
+  height: 32px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.discount-box .symbol {
+  height: 32px;
+  width: 32px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  border: 1px solid #d0d5dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.po-table thead th {
+  background: #e5f0ff !important;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.slno-cell {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  border-right: none !important; /* No border after Sl No */
+}
+
+.item-cell {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  border-left: none !important; 
+  border-right: 1px solid #e5e7eb
+}
+
+.input-big {
+  height: 38px !important; /* Bigger height */
+  padding-top: 8px !important; /* Text moves downward */
+  padding-left: 10px !important;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.po-table th:last-child,
+.po-table td:last-child {
+  border-right: none !important;
+}
+
+.numslno {
+  border-right: none !important;
+}
+
+.itemsno {
+  border-left: none !important;
+}
+
+
+
+
+
+/* ------------------- */
+/* SEPARATE COLUMN LINES */
+/* ------------------- */
+
+/* Add border-right only to thead */
+.po-table thead th {
+  border-right: 1px solid #D7D7D7 !important;
+  position: relative;
+  z-index: 2;
+  
+}
+
+/* Add separate border-right to tbody, shifted slightly */
+.po-table tbody td {
+  position: relative;
+  z-index: 1;
+}
+
+/* Remove last column border */
+.po-table thead th:last-child,
+.po-table tbody td:last-child {
+  border-right: none !important;
+}
+
+/* ------------------- */
+/* REMOVE BORDER BETWEEN Sl No & Items */
+/* ------------------- */
+
+/* Sl No column – remove right border */
+.po-table .numslno {
+  border-right: none !important;
+}
+
+/* Items column – remove left border */
+.po-table .itemsno {
+  border-left: none !important;
+}
+
+/* OPTIONAL: If thead also needs no border between these columns */
+.po-table thead th:nth-child(1) {
+  border-right: none !important; /* Sl No */
+}
+
+.po-table thead th:nth-child(2) {
+  border-left: none !important; /* Items */
+}
+
+
+
+
+/* column small divider (not full height) */
+.po-table tbody td.items-cell {
+  position: relative;
+}
+
+/* small divider instead of full-height border */
+.po-table tbody td.items-cell::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 6px;         /* distance from top */
+  bottom: 6px;      /* distance from bottom */
+  width: 1px;
+  background: #E0E0E0;
+}
+
+
+
+

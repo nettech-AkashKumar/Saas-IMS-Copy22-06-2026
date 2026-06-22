@@ -1,0 +1,47 @@
+
+.table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table thead tr {
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td,
+.table th {
+  border: none !important; /* remove unwanted double lines */
+}
+.supplierlabel {
+  color: "#0E101A";
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: "12px";
+}
+
+.supplierinput {
+  padding: "8px 12px";
+  border: "1px solid #EAEAEA";
+  border-radius: "8px";
+}
+
+.supplierinput::placeholder {
+  color: "#727681";
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.supplierselect {
+  color: #727681;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  padding: 8px 14px;
+}
+.supplierselect option:hover {
+  background-color: #e5f0ff !important;
+  color: red;
+  cursor: pointer;
+}

@@ -1,0 +1,193 @@
+import React, { useState } from 'react';
+import '../SecurityChangePassword/SecurityChangePassword.css'
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import BASE_URL from '../../../../pages/config/config';
+import { useNavigate } from 'react-router-dom';
+import api from "../../../../pages/config/axiosInstance"
+import { useAuth } from '../../../auth/AuthContext';
+
+
+const PphnneChangePassword = ({ isOpen, onClose }) => {
+  const { user} = useAuth();
+  const [showCurrent, setShowCurrent] = useState(false);
+  const [showNew, setShowNew] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+ 
+  const toggleCurrent = () => setShowCurrent(!showCurrent);
+  const toggleNew = () => setShowNew(!showNew);
+  const toggleConfirm = () => setShowConfirm(!showConfirm);
+// const token = localStorage.getItem("token");
+
+  const [formData, setFormData] = useState({
+    currentpassword: '',
+    newpassword: '',
+    confirmpassword: '',
+  });
+   const currentPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+  const validateForm = () => {
+    let newErrors = {};
+
+     if (!currentPasswordRegex.test(formData.currentpassword)){
+      newErrors.currentpassword = "Current Password must be 8+ chars, include uppercase, lowercase, number & symbol";
+  }
+    if (!passwordRegex.test(formData.newpassword)){
+      newErrors.newpassword = "New Password must be 8+ chars, include uppercase, lowercase, number & symbol";
+  }
+    if (formData.confirmpassword !== formData.newpassword){
+      newErrors.confirmpassword = "Passwords do not match";
+  }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(!validateForm()) return;
+    // const userData = JSON.parse(localStorage.getItem('user'));
+    const userData = user
+    const userId = userData.id || userData?._id;
+
+    if (formData.newpassword !== formData.confirmpassword) {
+      toast.error('New password and confirm password do not match', {
+        position: 'top-center',
+      });
+      return;
+    }
+
+    try {
+      // const token = localStorage.getItem('token');
+      await api.put(`/api/user/update/${userId}`, {
+        currentpassword: formData.currentpassword,
+        newpassword: formData.newpassword,
+        confirmpassword: formData.confirmpassword,
+      });
+
+      toast.success('Password updated successfully. Please login again', {
+        position: 'top-center',
+      });
+      // localStorage.removeItem('token');
+      // localStorage.removeItem('user');
+      // localStorage.removeItem('twoFAToken');
+      // localStorage.removeItem('userId');
+      navigate("/login")
+
+      setFormData({ currentpassword: '', newpassword: '', confirmpassword: '' });
+      onClose();
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Error updating password', {
+        position: 'top-center',
+      });
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="pphnne-overlay">
+      <div className="pphnne-modal">
+        <h3 className="pphnne-title">Change Password</h3>
+        <form onSubmit={handleSubmit}>
+            <div>
+          <label style={{width:'100%'}}>
+            Current Password
+            <div className="pphnne-input-wrapper">
+              <input className='pphnne-input-wrapperinput'
+                type={showCurrent ? 'text' : 'password'}
+                name="currentpassword"
+                value={formData.currentpassword}
+                onChange={handleInputChange}
+                required
+                placeholder='Enter your current password'
+              />
+              {errors.currentpassword && (
+                  <p style={{ color: "red", fontSize: "12px" }}>
+                    {errors.currentpassword}
+                  </p>
+                )}
+              <span onClick={toggleCurrent}>
+                {showCurrent ? <FiEye /> : <FiEyeOff />}
+              </span>
+            </div>
+          </label>
+            </div>
+
+<div>
+          <label style={{width:'100%'}}>
+            New Password
+            <div className="pphnne-input-wrapper">
+              <input className='pphnne-input-wrapperinput'
+                type={showNew ? 'text' : 'password'}
+                name="newpassword"
+                value={formData.newpassword}
+                onChange={handleInputChange}
+                required
+                placeholder='Enter new password'
+              />
+              {errors.newpassword && (
+                  <p style={{ color: "red", fontSize: "12px" }}>
+                    {errors.newpassword}
+                  </p>
+                )}
+              <span onClick={toggleNew}>
+                {showNew ? <FiEye /> : <FiEyeOff />}
+              </span>
+            </div>
+          </label>
+</div>
+<div>
+          <label style={{width:'100%'}}>
+            Re-Enter New Password
+            <div className="pphnne-input-wrapper">
+              <input className='pphnne-input-wrapperinput'
+                type={showConfirm ? 'text' : 'password'}
+                name="confirmpassword"
+                value={formData.confirmpassword}
+                onChange={handleInputChange}
+                required
+                placeholder='Re-Enter new password'
+              />
+              {errors.confirmpassword && (
+                  <p style={{ color: "red", fontSize: "12px" }}>
+                    {errors.confirmpassword}
+                  </p>
+                )}
+              <span onClick={toggleConfirm}>
+                {showConfirm ? <FiEye /> : <FiEyeOff />}
+              </span>
+            </div>
+          </label>
+</div>
+
+          <div className="pphnne-footer">
+            <button
+              type="button"
+              className="pphnne-cancel"
+              onClick={onClose}
+            >
+              Cancel
+            </button>
+            <button type="submit" className="pphnne-update">
+              Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default PphnneChangePassword;
+

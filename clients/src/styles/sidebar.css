@@ -1,0 +1,100 @@
+
+
+
+
+/* New Sidebar CSS */
+
+.sidebar-menu-link{
+    overflow-y: auto;
+    max-height: calc(100vh - 15vh);
+}
+.sidebar-menu-link::-webkit-scrollbar {
+ display: none;
+  
+}
+
+.sidebarmenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.sidebarmenu-item {
+  color: black;
+  cursor: pointer;
+  position: relative;
+  font-family: "Inter";
+}
+
+.sidebarmenu-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s;
+}
+.sidebarmenu-title:hover{
+    color: #007aff !important;
+}
+.expenses-li{
+     transition: 0.5s;
+}
+.expenses-li a:hover{
+color: #007aff !important;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.rotate {
+  transform: rotate(90deg);
+}
+
+/* Dropdown content */
+.dropdown {
+  list-style: none;
+  /* margin: 5px 0 0 15px; */
+  padding: 1px 0px;
+  /* padding: 0; */
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.dropdown.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+
+.dropdown li {
+  padding: 3px 10px;
+  transition: 0.5s ;
+}
+.dropdown li:hover{
+    background-color: rgba(128, 128, 128, 0.096);
+    border-radius: 5px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: #515151;
+  font-size: 14px;
+   font-family: "Inter";
+   gap: 10px;
+   display: flex;
+   align-items: center;
+   font-weight: 400;
+}
+
+.dropdown a:hover {
+  color: black;
+}
+.user-id{
+    position: fixed;
+    bottom: 8px;
+    gap: 20px;
+}
+

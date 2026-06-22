@@ -1,0 +1,66 @@
+import React, { createContext, useContext, useEffect, useState } from "react";
+import axios from "axios";
+import BASE_URL from "../../pages/config/config";
+import api from "../../pages/config/axiosInstance"
+
+const SettingsContext = createContext();
+// const token = localStorage.getItem("token");
+
+export const SettingsProvider = ({ children }) => {
+    const [settings, setSettings] = useState({
+        currencySymbol: "₹",
+        currencyCode: "INR",
+        percentageSymbol: "%",
+        conversionRates: {},
+    });
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const token = localStorage.getItem("token");
+                if (!token) return;
+                const res = await api.get('/api/settings/get');
+                setSettings(res.data);
+            } catch (error) {
+                console.error("Failed to fetch settings:", error.response?.data || error.message);
+            }
+        })();
+    }, []);
+
+    const updateSettings = async (newSettings) => {
+        // const token = localStorage.getItem("token");
+        const res = await api.put('/api/settings/update', newSettings);
+        setSettings(res.data);
+    };
+
+    return (
+        <SettingsContext.Provider value={{ settings, updateSettings }}>
+            {children}
+        </SettingsContext.Provider>
+    );
+};
+
+export const useSettings = () => useContext(SettingsContext);
+
+
+
+
+// // src/context/SettingsContext.jsx
+// import React, { createContext, useContext, useState } from "react";
+
+// const SettingsContext = createContext();
+
+// export const SettingsProvider = ({ children }) => {
+//     const [settings, setSettings] = useState({
+//         currencySymbol: "₹",
+//         percentageSymbol: "%",
+//     });
+
+//     return (
+//         <SettingsContext.Provider value={{ settings, setSettings }}>
+//             {children}
+//         </SettingsContext.Provider>
+//     );
+// };
+
+// export const useSettings = () => useContext(SettingsContext);

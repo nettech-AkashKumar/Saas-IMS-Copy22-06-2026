@@ -1,0 +1,131 @@
+/* NAVBAR */
+
+.custom-navbar{
+    /* background: rgba(15,23,42,.75); */
+        background: linear-gradient(135deg, #0f172a, #4c1d95);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+    padding:14px 0;
+}
+
+
+/* LINKS */
+
+.nav-link{
+    color:rgba(255,255,255,.78)!important;
+    font-weight:600!important;
+    position:relative;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#fff!important;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    bottom:-4px;
+    left:50%;
+
+    width:0;
+    height:2px;
+
+    transform:translateX(-50%);
+
+    background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6
+    );
+
+    transition:.3s;
+}
+
+.nav-link:hover::after{
+    width:70%;
+}
+
+
+/* BUTTONS */
+
+.nav-login-btn{
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.nav-login-btn:hover{
+    background:rgba(255,255,255,.15);
+    color:white;
+}
+
+
+.nav-signup-btn{
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #2563eb
+    );
+
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,.35);
+
+    transition:.3s;
+}
+
+.nav-signup-btn:hover{
+    transform:translateY(-2px);
+    color:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.navbar-collapse{
+
+background:rgba(30,41,59,.95);
+
+padding:20px;
+
+margin-top:15px;
+
+border-radius:18px;
+
+backdrop-filter:blur(20px);
+
+}
+
+.nav-link{
+padding:12px 0!important;
+}
+
+.saas-all-login{
+margin-top:20px;
+flex-direction:column;
+}
+
+}

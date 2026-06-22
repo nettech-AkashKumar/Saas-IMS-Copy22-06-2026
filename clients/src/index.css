@@ -1,0 +1,147 @@
+/* font-famaliy-add */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* login All Pages CSS */
+.login-all-pages{
+    background-color: white;
+    border-radius: 16px;
+    width: 480px;
+    padding: 30px 40px;
+    gap: 10px;
+}
+/* All Button color Define */
+.button-color{
+    background-color: #1F7FFF;
+    border-radius: 8px;
+    border: 1.5px solid #1F7FFF;
+    box-shadow: -1px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* define-color */
+.button-hover{
+    transition: all 0.5s;
+}
+.button-hover:hover{
+    background-color: rgba(0, 119, 255, 0.63) !important;
+    color: white !important;
+    /* border: none !important; */
+}
+
+/* define-color */
+.button-action{
+    transition: all 0.5s;
+}
+.button-action:hover{
+    background-color: rgba(83, 156, 240, 0.329) !important;
+    /* color: white !important; */
+    /* border: none !important; */
+}
+.icon-hover:hover{
+    color: rgba(0, 119, 255, 0.63) !important;
+}
+.border-hover{
+    /* transition: all 0.5s; */
+}
+.border-hover:hover{
+    outline: 1px solid rgba(0, 119, 255, 0.63)  !important;
+}
+input::placeholder{
+     font-family: "Inter";
+     /* color: red; */
+     
+}
+
+/* delete-icon-hover */
+.delete-hover-icon {
+  opacity: 0;         /* hide icon */
+  transition: opacity 0.2s ease;
+}
+
+.delete-hover:hover .delete-hover-icon {
+  opacity: 1;         /* show on hover */
+}
+.table-hover{
+    transition: all 0.5s;}
+    .table-hover:hover{
+    background-color:   rgba(0, 119, 255, 0.158) ;}
+
+.active-row {
+  background-color: rgba(0, 119, 255, 0.158) !important;
+}
+
+.all-page-scrollbar-y{
+    overflow-y: auto;
+    height: calc(100vh - 180px);
+}
+.all-page-scrollbar-y::-webkit-scrollbar{
+    display: none;
+}
+
+.custom-input::placeholder {
+  color: #000000;
+}
+.custom-select {
+  /* Base styles */
+  color: inherit; /* Inherit from child classes */
+}
+
+.custom-select.placeholder-selected {
+  color: gray;
+}
+
+.custom-select.value-selected {
+  color: black;
+}
+
+/* Still style the dropdown options for consistency */
+.custom-select option:first-child {
+  color: gray;
+}
+
+.custom-select option:not(:first-child) {
+  color: black;
+}
+.input-placeholder::placeholder{
+    color: #BABABA;
+    font-family: "Inter";
+      font-size: 14px;
+}
+.input-outline:hover{
+    outline: 1px solid rgb(145, 145, 243) !important;
+}
+
+@media (max-width: 991px) {
+  .header-btn {
+    height: 30px !important;
+    padding: 6px !important;
+    font-size: 12px !important;
+    gap: 3px;
+      display: -webkit-box;
+    -webkit-line-clamp: 3;      /* max 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  .header-btn-icon {
+    font-size: 16px !important;
+  }
+  .posbtn-alltran-addbag{
+    display: none;
+  }
+}
+@media (max-width:746px){
+  .pos-nav-container{
+  height: 150px !important;
+  justify-content: center !important;
+  }
+}
+
+
+
+
+/* SaaS */
