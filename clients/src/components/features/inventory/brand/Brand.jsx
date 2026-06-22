@@ -437,7 +437,7 @@ const Brand = () => {
               lineHeight: "26.4px",
             }}
           >
-            Brand
+            Brands
           </h2>
         </div>
 
